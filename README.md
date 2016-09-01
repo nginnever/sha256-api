@@ -15,7 +15,7 @@ A RESTful api for creating and indexing sha256 digests
 
 ####POST Request
 
-Input: JSON
+Input: String
 
 Adds sha256 digest to mongodb with value key: 'sha256(message)' value: 'message'
 
