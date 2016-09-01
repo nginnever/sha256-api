@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/nginnever/sha256-api#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "js-sha256": "^0.3.0",
+    "mongodb": "^2.2.9"
   }
 }
