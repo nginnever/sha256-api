@@ -19,6 +19,8 @@ Input: String
 
 Adds sha256 digest to mongodb with value key: 'sha256(message)' value: 'message'
 
+Response: JSON digest
+
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://149.56.133.176:3000/messages
 >{
