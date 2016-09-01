@@ -19,7 +19,7 @@ app.get('/messages/:sha', function (request, response) {
 	console.log(request.param('sha'))
 	db.get(request.param('sha'), function(res) {
 		if (res === 'not found') {
-			response.status(404).send('Not Found')
+			response.status(404).send(JSON.stringify({"err_msg": "message not found"}, null, 3) + '\n')
 		} else {
 			response.setHeader('Content-Type', 'application/json')
 		  response.send(JSON.stringify({"message" : res}, null, 3) + '\n')
