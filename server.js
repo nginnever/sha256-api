@@ -8,24 +8,24 @@ const db = require('./db')
 app.use(parser.json())
 
 app.post('/messages', function (request, response) {
-	console.log(db.set)
-	var s = sha256(request.body.message)
+  console.log(db.set)
+  var s = sha256(request.body.message)
   db.set(s, request.body.message)
   response.setHeader('Content-Type', 'application/json')
   response.send(JSON.stringify({"digest" : s}, null, 3) + '\n')
 })
 
 app.get('/messages/:sha', function (request, response) {
-	console.log(request.param('sha'))
-	db.get(request.param('sha'), function(res) {
-		if (res === 'not found') {
-			response.setHeader('Content-Type', 'application/json')
-			response.status(404).send(JSON.stringify({"err_msg": "message not found"}, null, 3) + '\n')
-		} else {
-			response.setHeader('Content-Type', 'application/json')
-		  response.send(JSON.stringify({"message" : res}, null, 3) + '\n')
-	  }
-	})
+  console.log(request.param('sha'))
+  db.get(request.param('sha'), function(res) {
+    if (res === 'not found') {
+      response.setHeader('Content-Type', 'application/json')
+      response.status(404).send(JSON.stringify({"err_msg": "message not found"}, null, 3) + '\n')
+    } else {
+      response.setHeader('Content-Type', 'application/json')
+      response.send(JSON.stringify({"message" : res}, null, 3) + '\n')
+    }
+  })
 })
 
 // Connect to Mongo on start
