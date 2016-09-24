@@ -1,5 +1,6 @@
 # sha256-api
 A RESTful api for creating and indexing sha256 digests
+This is just a tooling example
 
 ##URL
 
