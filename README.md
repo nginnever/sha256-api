@@ -42,7 +42,7 @@ curl http://149.56.133.176:3000/messages/2c26b46b68ffc68ff99b453c1d30413413422d7
 >}
 ```
 
-#### GET 404
+#### GET 404ed
 
 Input: not in the database
 
